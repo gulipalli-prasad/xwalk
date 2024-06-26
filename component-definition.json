@@ -149,9 +149,9 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
+                "resourceType": "core/franklin/components/text/v1/text",
                 "template": {
-					          "name": "MAIL-P",
+					          "name": "MSIL-P",
 							  "model": "msil-p",
 							  "quote": "<p>Think, McFly! Think!</p>",
 							  "author": "Biff Tannen"
