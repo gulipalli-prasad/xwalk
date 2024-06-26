@@ -185,5 +185,17 @@
         "valueType": "string"
       }
     ]
+  },
+    {
+    "id": "msil",
+    "fields": [
+      {
+        "component": "text",
+        "name": "style",
+        "value": "",
+        "label": "Style",
+        "valueType": "string"
+      }
+    ]
   }
 ]
