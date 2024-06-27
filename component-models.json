@@ -190,7 +190,7 @@
     "id": "msil",
     "fields": [
       {
-        "component": "text",
+        "component": "teaser",
         "name": "style",
         "value": "",
         "label": "Style",
