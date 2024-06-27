@@ -187,10 +187,10 @@
     ]
   },
     {
-    "id": "msil",
+    "id": "teaser",
     "fields": [
       {
-        "component": "teaser",
+        "component": "text",
         "name": "style",
         "value": "",
         "label": "Style",
