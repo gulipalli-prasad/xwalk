@@ -144,8 +144,8 @@
       "id": "msil",
       "components": [
         {
-          "title": "Teaser",
-          "id": "teaser",
+          "title": "Text",
+          "id": "text",
           "plugins": {
             "xwalk": {
               "page": {
