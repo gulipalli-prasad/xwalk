@@ -1,49 +1,32 @@
-/* styles.css */
+/* File: styles.css */
 
-/* Styling for the form */
-.quote-form {
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  max-width: 400px;
+.block.quote {
+  background-color: green;
+  padding: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
 }
 
-.quote-form label {
+.block.quote blockquote {
+  margin: 16px;
+  text-indent: 0;
+}
+
+.block.quote > div:last-child > div {
+  margin: 0 16px;
+  font-size: small;
+  font-style: italic;
+  position: relative;
+}
+
+.block.quote > div:last-child > div::after {
+  content: "";
   display: block;
-  margin-bottom: 8px;
-}
-
-.quote-form input[type="text"] {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-}
-
-.quote-form input[type="submit"] {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.quote-form input[type="submit"]:hover {
-  background-color: #45a049;
-}
-
-/* Styling for the response container */
-.quote-response {
-  margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  max-width: 400px;
-}
-
-.quote-response p {
-  margin-bottom: 10px;
-}
-
-.quote-response p:first-child {
-  margin-top: 0;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  height: 5px;
+  width: 30px;
+  background-color: darkgray;
 }
