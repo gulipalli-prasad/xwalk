@@ -193,7 +193,7 @@
         "component": "text",
         "name": "msil",
         "value": "",
-        "label": "Style",
+        "label": "msil",
         "valueType": "string"
       }
     ]
