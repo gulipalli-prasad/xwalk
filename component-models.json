@@ -190,7 +190,7 @@
     "id": "msil",
     "fields": [
       {
-        "component": "richtext",
+        "component": "text",
         "name": "msil",
         "value": "",
         "label": "Msil",
