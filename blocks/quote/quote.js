@@ -2,7 +2,7 @@
 
 // Function to decorate a block with response data
 export default function decorate(block) {
-  const quoteWrapper = block.children[0]; // Assuming block has one child for quote content
+  const [quoteWrapper, quoteWrapper1] = block.children; // Assuming block has one child for quote content
 
   const xhr = new XMLHttpRequest();
   const url = "https://jsonplaceholder.typicode.com/posts"; // Test API endpoint
@@ -26,8 +26,8 @@ export default function decorate(block) {
     }
   };
 
-  const fname = "John"; // Replace with the actual first name value
-  const lname = "Doe"; // Replace with the actual last name value
+  const fname = quoteWrapper.textContent.trim(); // Replace with the actual first name value
+  const lname = quoteWrapper1.textContent.trim(); // Replace with the actual last name value
 
   const data = JSON.stringify({
     fname: fname,
