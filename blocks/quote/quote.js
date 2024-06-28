@@ -1,5 +1,7 @@
 // File: decorate.js
-export default function decorate(block, fname, lname) {
+
+// Function to decorate a block with response data
+function decorate(block, fname, lname) {
   const quoteWrapper = block.children[0]; // Assuming block has one child for quote content
 
   const xhr = new XMLHttpRequest();
@@ -32,9 +34,12 @@ export default function decorate(block, fname, lname) {
   xhr.send(data);
 }
 
-// Example usage in the same file
-const blockElement = document.getElementById("block-id"); // Replace with your actual block element
-const fname = "John"; // Replace with the actual first name value
-const lname = "Doe"; // Replace with the actual last name value
+// Example usage in AEM/EDS environment
+document.addEventListener("DOMContentLoaded", function () {
+  // Replace 'block-id' with the actual ID or selector for your block element
+  const blockElement = document.getElementById("block-id");
+  const fname = "John"; // Replace with the actual first name value
+  const lname = "Doe"; // Replace with the actual last name value
 
-decorate(blockElement, fname, lname);
+  decorate(blockElement, fname, lname);
+});
