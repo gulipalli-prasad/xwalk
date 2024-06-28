@@ -189,13 +189,13 @@
     {
     "id": "msil",
     "fields": [
-     {
-       "component": "text-area",
-       "name": "msil",
-       "value": "",
-       "label": "Msil",
-       "valueType": "string"
-     }}
+      {
+        "component": "richtext",
+        "name": "msil",
+        "value": "",
+        "label": "Msil",
+        "valueType": "string"
+      }
     ]
   },
   {
