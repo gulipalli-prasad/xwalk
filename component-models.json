@@ -191,7 +191,7 @@
     "fields": [
       {
         "component": "text",
-        "name": "style",
+        "name": "msil",
         "value": "",
         "label": "Style",
         "valueType": "string"
