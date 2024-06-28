@@ -18,8 +18,8 @@ export default function decorate(block) {
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
 
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4 && xhr.status === 201) {
+    xhr.onload = function () {
+      if (xhr.status === 201) {
         // Status 201 indicates successful creation
         const json = JSON.parse(xhr.responseText);
 
@@ -31,6 +31,8 @@ export default function decorate(block) {
           <p>Last Name: ${json.lname}</p>`;
 
         quoteWrapper.replaceChildren(blockquote);
+      } else {
+        console.error("Error:", xhr.status); // Log any error status
       }
     };
 
