@@ -140,19 +140,19 @@
       ]
     },
     {
-      "title": "MSIL",
-      "id": "msil",
+      "title": "Custom Blocks",
+      "id": "customblocks",
       "components": [
         {
-          "title": "Text",
-          "id": "text",
+          "title": "MSIL",
+          "id": "msil",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/text/v1/text",
                 "template": {
-			      "name": "MSIL-P",
-			      "model": "msil-p",
+			      "name": "MSIL",
+			      "model": "msil",
 			      "quote": "<p>Think, McFly! Think!</p>",
 			      "author": "Biff Tannen"
 				}
