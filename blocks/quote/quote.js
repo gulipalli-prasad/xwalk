@@ -1,44 +1,79 @@
 // File: decorate.js
 
-export default function decorate(block) {
-  const quoteWrapper = block.children[0]; // Assuming block has one child for quote content
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.createElement("form");
+  form.id = "myForm";
 
-  const xhr = new XMLHttpRequest();
-  const url = "https://jsonplaceholder.typicode.com/posts"; // Test API endpoint
+  const fnameLabel = document.createElement("label");
+  fnameLabel.setAttribute("for", "fname");
+  fnameLabel.textContent = "First name:";
+  form.appendChild(fnameLabel);
 
-  xhr.open("POST", url, true);
-  xhr.setRequestHeader("Content-Type", "application/json");
+  const fnameInput = document.createElement("input");
+  fnameInput.type = "text";
+  fnameInput.id = "fname";
+  fnameInput.name = "fname";
+  fnameInput.required = true;
+  form.appendChild(fnameInput);
 
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 201) {
-      // Status 201 indicates successful creation
-      const json = JSON.parse(xhr.responseText);
+  form.appendChild(document.createElement("br"));
 
-      const blockquote = document.createElement("blockquote");
-      blockquote.innerHTML = `
-        <p>Form submitted successfully!</p>
-        <p>Response ID: ${json.id}</p>
-        <p>First Name: ${json.fname}</p>
-        <p>Last Name: ${json.lname}</p>`;
+  const lnameLabel = document.createElement("label");
+  lnameLabel.setAttribute("for", "lname");
+  lnameLabel.textContent = "Last name:";
+  form.appendChild(lnameLabel);
 
-      quoteWrapper.replaceChildren(blockquote);
-    }
-  };
+  const lnameInput = document.createElement("input");
+  lnameInput.type = "text";
+  lnameInput.id = "lname";
+  lnameInput.name = "lname";
+  lnameInput.required = true;
+  form.appendChild(lnameInput);
 
-  const formData = getFormData(); // Function to retrieve form data dynamically
+  form.appendChild(document.createElement("br"));
 
-  const data = JSON.stringify(formData);
+  const submitBtn = document.createElement("input");
+  submitBtn.type = "submit";
+  submitBtn.value = "Submit";
+  form.appendChild(submitBtn);
 
-  xhr.send(data);
-}
+  const responseDiv = document.createElement("div");
+  responseDiv.id = "response";
+  document.body.appendChild(form);
+  document.body.appendChild(responseDiv);
 
-function getFormData() {
-  // Simulate retrieving form data dynamically from AEM or user input
-  const fname = "John"; // Replace with actual method to retrieve first name
-  const lname = "Doe"; // Replace with actual method to retrieve last name
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  return {
-    fname: fname,
-    lname: lname,
-  };
-}
+    const xhr = new XMLHttpRequest();
+    const url = "https://jsonplaceholder.typicode.com/posts"; // Test API endpoint
+
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 201) {
+        const json = JSON.parse(xhr.responseText);
+
+        const responseContent = `
+          <p>Form submitted successfully!</p>
+          <p>Response ID: ${json.id}</p>
+          <p>First Name: ${json.fname}</p>
+          <p>Last Name: ${json.lname}</p>
+        `;
+
+        responseDiv.innerHTML = responseContent;
+      }
+    };
+
+    const fname = fnameInput.value;
+    const lname = lnameInput.value;
+
+    const data = JSON.stringify({
+      fname: fname,
+      lname: lname,
+    });
+
+    xhr.send(data);
+  });
+});
