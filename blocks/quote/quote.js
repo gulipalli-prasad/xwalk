@@ -1,8 +1,7 @@
 // File: decorate.js
 
-// Function to decorate a block with response data
 export default function decorate(block) {
-  const [quoteWrapper, quoteWrapper1] = block.children; // Assuming block has one child for quote content
+  const quoteWrapper = block.children[0]; // Assuming block has one child for quote content
 
   const xhr = new XMLHttpRequest();
   const url = "https://jsonplaceholder.typicode.com/posts"; // Test API endpoint
@@ -26,13 +25,20 @@ export default function decorate(block) {
     }
   };
 
-  const fname = quoteWrapper.textContent.trim(); // Replace with the actual first name value
-  const lname = quoteWrapper1.textContent.trim(); // Replace with the actual last name value
+  const formData = getFormData(); // Function to retrieve form data dynamically
 
-  const data = JSON.stringify({
-    fname: fname,
-    lname: lname,
-  });
+  const data = JSON.stringify(formData);
 
   xhr.send(data);
+}
+
+function getFormData() {
+  // Simulate retrieving form data dynamically from AEM or user input
+  const fname = "John"; // Replace with actual method to retrieve first name
+  const lname = "Doe"; // Replace with actual method to retrieve last name
+
+  return {
+    fname: fname,
+    lname: lname,
+  };
 }
