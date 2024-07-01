@@ -223,37 +223,16 @@
       {
         "component": "text-input",
         "valueType": "string",
-        "name": "title-heading",
-        "label": "Title-heading",
+        "name": "blog",
+        "label": "Blog",
         "value": ""
       },
       {
         "component": "text-input",
         "valueType": "string",
-        "name": "title-subheading",
+        "name": "prasad",
         "value": "",
-        "label": "Title-subheading"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text-input",
-        "valueType": "string",
-        "name": "paragraph-text",
-        "label": "Paragraph-text",
-        "value": ""
-      },
-      {
-        "component": "text-input",
-        "valueType": "string",
-        "name": "paragraph-desc",
-        "label": "Paragraph-desc",
-        "value": ""
+        "label": "Prasad"
       }
     ]
   }
