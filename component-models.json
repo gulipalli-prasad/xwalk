@@ -242,14 +242,14 @@
         "multi": false
       },
       {
-        "component": "textarea",
+        "component": "text-area",
         "valueType": "string",
         "name": "textContent",
         "value": "",
         "label": "Text Content"
       },
       {
-        "component": "textarea",
+        "component": "text-area",
         "valueType": "string",
         "name": "detailedText",
         "value": "",
