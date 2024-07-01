@@ -216,24 +216,5 @@
         "value": ""
       }
     ]
-  },
-  {
-    "id": "blog",
-    "fields": [
-      {
-        "component": "text-input",
-        "valueType": "string",
-        "name": "blog",
-        "label": "Blog",
-        "value": ""
-      },
-      {
-        "component": "text-input",
-        "valueType": "string",
-        "name": "prasad",
-        "value": "",
-        "label": "Prasad"
-      }
-    ]
   }
 ]
