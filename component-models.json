@@ -218,28 +218,42 @@
     ]
   },
   {
-    "id": "vilan",
+    "id": "customcard",
     "fields": [
       {
-        "component": "reference",
+        "component": "text",
         "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
+        "name": "titleHeading",
+        "value": "",
+        "label": "Title Heading"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alt",
-        "value": ""
+        "name": "titleDescription",
+        "value": "",
+        "label": "Title Description"
       },
       {
-        "component": "richtext",
-        "name": "text",
+        "component": "reference",
+        "valueType": "string",
+        "name": "imageSrc",
+        "label": "Image Source",
+        "multi": false
+      },
+      {
+        "component": "textarea",
+        "valueType": "string",
+        "name": "textContent",
         "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "label": "Text Content"
+      },
+      {
+        "component": "textarea",
+        "valueType": "string",
+        "name": "detailedText",
+        "value": "",
+        "label": "Detailed Text"
       }
     ]
   }

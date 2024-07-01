@@ -1,11 +1,35 @@
 .card {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.fakeimg {
-  background-color: #aaa;
+.card h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.card h5 {
+  font-size: 18px;
+  color: #888;
+  margin: 10px 0;
+}
+
+.card .fakeimg {
   width: 100%;
-  padding: 20px;
+  background-color: #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 10px 0;
 }
