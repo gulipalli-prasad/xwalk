@@ -1,9 +1,7 @@
 [
   {
     "id": "main",
-    "components": [
-      "section"
-    ]
+    "components": ["section"]
   },
   {
     "id": "columns",
@@ -11,12 +9,7 @@
   },
   {
     "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
+    "components": ["text", "image", "button", "title"]
   },
   {
     "id": "section",
@@ -28,14 +21,13 @@
       "hero",
       "cards",
       "columns",
-	  "msil",
-	   "quote" 
+      "msil",
+      "quote",
+      "blog"
     ]
   },
   {
     "id": "cards",
-    "components": [
-      "card"
-    ]
+    "components": ["card"]
   }
 ]

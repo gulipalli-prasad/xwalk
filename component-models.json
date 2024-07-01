@@ -186,36 +186,75 @@
       }
     ]
   },
-    {
+  {
     "id": "msil",
     "fields": [
-     {
-       "component": "text",
-       "name": "msil",
-       "value": "",
-       "label": "Msil",
-       "valueType": "string"
-     }
+      {
+        "component": "text",
+        "name": "msil",
+        "value": "",
+        "label": "Msil",
+        "valueType": "string"
+      }
     ]
   },
   {
-  "id": "quote",
-  "fields": [
-     {
-       "component": "text-area",
-       "name": "quote",
-       "value": "",
-       "label": "Quote",
-       "valueType": "string"
-     },
-     {
-       "component": "text-input",
-       "valueType": "string",
-       "name": "author",
-       "label": "Author",
-       "value": ""
-     }
-   ]
-}
-
+    "id": "quote",
+    "fields": [
+      {
+        "component": "text-area",
+        "name": "quote",
+        "value": "",
+        "label": "Quote",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "author",
+        "label": "Author",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "blog",
+    "fields": [
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "title-heading",
+        "label": "Title-heading",
+        "value": ""
+      },
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "title-subheading",
+        "value": "",
+        "label": "Title-subheading"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "paragraph-text",
+        "label": "Paragraph-text",
+        "value": ""
+      },
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "paragraph-desc",
+        "label": "Paragraph-desc",
+        "value": ""
+      }
+    ]
+  }
 ]
