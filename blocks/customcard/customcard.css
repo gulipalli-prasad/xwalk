@@ -3,6 +3,7 @@
   margin: 10px 0;
   border: 1px solid #ddd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: aqua;
 }
 
 .card h2 {
