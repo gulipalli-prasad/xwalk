@@ -11,8 +11,8 @@ export default function decorate(block) {
 
     const titleHeading = titleHeadingEl?.textContent?.trim() || "";
     const titleDescription = titleDescriptionEl?.textContent?.trim() || "";
-    const imageSource = imageSourceEl?.textContent?.trim() || "Image";
-    const textContent = textContentEl?.textContent?.trim() || "Some text..";
+    const imageSource = imageSourceEl?.textContent?.trim() || "";
+    const textContent = textContentEl?.textContent?.trim() || "";
     const detailedText = detailedTextEl?.textContent?.trim() || "";
 
     return {

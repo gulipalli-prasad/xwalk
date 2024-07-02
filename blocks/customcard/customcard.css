@@ -3,7 +3,7 @@
   margin: 10px 0;
   border: 1px solid #ddd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: pink;
 }
 
 .card h2 {
@@ -34,4 +34,24 @@
   line-height: 1.5;
   color: #333;
   margin: 10px 0;
+}
+
+.custom-card {
+  /* Background color for the card itself */
+  background-color: pink;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.custom-card block p {
+  background-color: #e0e0e0;
+  color: #ff0000; /* Text color for the title heading */
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.custom-card-wrapper .custom-card p {
+  color: #ff0000;
 }
