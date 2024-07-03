@@ -1,7 +1,3 @@
-import utility from "../../utility/utility.js";
-import teaser from "../../utility/teaserUtils.js";
-import ctaUtils from "../../utility/ctaUtils.js";
-
 export default function decorate(block) {
   function getCustomCard() {
     const [
@@ -12,46 +8,58 @@ export default function decorate(block) {
       detailedTextEl,
     ] = block.children;
 
-    const image = imageSourceEl?.querySelector("picture");
-    if (image) {
-      const img = image.querySelector("img");
-      img.removeAttribute("width");
-      img.removeAttribute("height");
-      const alt = "image";
-      img.setAttribute("alt", alt);
-    }
+    // const image = imageSourceEl?.querySelector("picture");
+    // if (image) {
+    //   const img = image.querySelector("img");
+    //   img.removeAttribute("width");
+    //   img.removeAttribute("height");
+    //   const alt = "image";
+    //   img.setAttribute("alt", alt);
+    // }
 
     const titleHeading = titleHeadingEl?.textContent?.trim();
     const titleDescription = titleDescriptionEl?.textContent?.trim();
     const textContent = textContentEl?.textContent?.trim();
     const detailedText = detailedTextEl?.textContent?.trim();
+    const imageSource = imageSourceEl?.textContent?.trim();
 
     return {
-      image,
       titleHeading,
       titleDescription,
       textContent,
       detailedText,
+      imageSource,
     };
   }
 
   const customCard = getCustomCard(block);
 
-  const customCardHtml = utility.sanitizeHtml(`
-    <div class="custom-container">
-      ${customCard.image ? customCard.image.outerHTML : ""}
-      <div class="custom-heading">
-        ${customCard.titleHeading ? `<h2>${customCard.titleHeading}</h2>` : ""}
-        ${
-          customCard.titleDescription
-            ? `<p>${customCard.titleDescription}</p>`
-            : ""
-        }
-        ${customCard.textContent ? `<p>${customCard.textContent}</p>` : ""}
-        ${customCard.detailedText ? `<p>${customCard.detailedText}</p>` : ""}
-      </div>
-    </div>
-  `);
+  // Create the form elements
+  const responseDiv = document.createElement("div");
+  responseDiv.className = "card";
 
-  block.innerHTML = customCardHtml;
+  const title = document.createElement("h2");
+  title.textContent = customCard.titleHeading;
+  responseDiv.appendChild(title);
+
+  const description = document.createElement("h5");
+  description.textContent = `${titleDescription}`;
+  responseDiv.appendChild(description);
+
+  const imageDiv = document.createElement("div");
+  imageDiv.className = "faking";
+  imageDiv.textContent = customCard.imageSource;
+  imageDiv.style.height = "200px";
+  responseDiv.appendChild(imageDiv);
+
+  const paragraphText = document.createElement("p");
+  paragraphText.textContent = customCard.textContent;
+  responseDiv.appendChild(paragraphText);
+
+  const paragraphDescription = document.createElement("p");
+  paragraphDescription.textContent = customCard.detailedText;
+  responseDiv.appendChild(paragraphDescription);
+
+  // Add the form to the block
+  block.appendChild(responseDiv);
 }

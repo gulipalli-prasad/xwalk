@@ -13,12 +13,12 @@ export default function decorate(block) {
 
   const customCardContent = getCustomCard();
 
-  const qName = document.createElement("div");
-  qName.className = "quote-name";
+  // const qName = document.createElement("div");
+  // qName.className = "quote-name";
 
-  const authorText = document.createElement("div");
-  authorText.className = "author-text";
-  qName.appendChild(authorText);
+  // const authorText = document.createElement("div");
+  // authorText.className = "author-text";
+  // qName.appendChild(authorText);
 
   // Create the form elements
   const form = document.createElement("form");

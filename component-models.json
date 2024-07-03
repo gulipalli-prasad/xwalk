@@ -256,5 +256,25 @@
         "label": "Detailed Text"
       }
     ]
+  },
+
+  {
+    "id": "navbar",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "firstName",
+        "value": "",
+        "label": "First Name"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "lastName",
+        "value": "",
+        "label": "Last Name"
+      }
+    ]
   }
 ]
