@@ -1,9 +1,3 @@
-.card {
-  font-family: serif;
-  font-size: 30px;
-  color: red;
-}
-
-.faking {
-  color: green;
+.custom-card-wrapper custom-card p {
+  background-color: black;
 }

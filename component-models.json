@@ -264,16 +264,23 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "firstName",
+        "name": "heading",
         "value": "",
-        "label": "First Name"
+        "label": "Heading"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "lastName",
+        "name": "subHeading",
         "value": "",
-        "label": "Last Name"
+        "label": "Sub Heading"
+      },
+      {
+        "component": "text-area",
+        "valueType": "string",
+        "name": "description",
+        "value": "",
+        "label": "Description"
       }
     ]
   }

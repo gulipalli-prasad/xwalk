@@ -1,0 +1,36 @@
+.nav-bar-wrapper {
+  color: red;
+}
+
+.custom-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px; /* Add space between image and link */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.custom-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.custom-link:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.block-with-background {
+  background-image: url("/content/dam/p-xwalk-site/hero.png"); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Ensures the link is centered horizontally */
+}
