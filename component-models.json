@@ -237,7 +237,7 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "imageSrc",
+        "name": "imageSource",
         "label": "Image Source",
         "multi": false
       },

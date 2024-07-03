@@ -1,4 +1,25 @@
 export default function decorate(block) {
+  function getCustomCard() {
+    const [quoteEl, authorEl] = block.children;
+
+    const quoteContent = quoteEl?.textContent?.trim() || "";
+    const authorText = authorEl?.textContent?.trim() || "";
+
+    return {
+      quoteContent,
+      authorText,
+    };
+  }
+
+  const customCardContent = getCustomCard();
+
+  const qName = document.createElement("div");
+  qName.className = "quote-name";
+
+  const authorText = document.createElement("div");
+  authorText.className = "author-text";
+  qName.appendChild(authorText);
+
   // Create the form elements
   const form = document.createElement("form");
   form.id = "myForm";
