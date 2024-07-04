@@ -9,12 +9,20 @@ export default function decorate(block) {
       hrefEl,
     ] = block.children;
 
+    console.log("my image value is++++", navImageEl);
+
     const heading = headingEl?.textContent?.trim() || "";
     const description = descriptionEl?.textContent?.trim() || "";
-    const navImage = navImageEl?.getAttribute("src")?.trim() || "";
+
+    const navImgElement = navImageEl.querySelector("img");
+    const navImage = navImgElement?.getAttribute("src")?.trim() || "";
+
     const altText = altTextEl?.textContent?.trim() || "";
+
+    const navBgImgElement = navBackgroundImageEl.querySelector("img");
     const navBackgroundImage =
-      navBackgroundImageEl?.getAttribute("src")?.trim() || "";
+      navBgImgElement?.getAttribute("src")?.trim() || "";
+
     const href = hrefEl?.textContent?.trim() || "";
 
     return {
@@ -27,23 +35,25 @@ export default function decorate(block) {
     };
   }
 
-  const customCard = getNavbar(block);
+  const Navbar = getNavbar(block);
 
-  // Create and append an image
-  const image = document.createElement("img");
-  image.src = "/content/dam/p-xwalk-site/widen-the-talent-pool.png"; // Replace with your image path
-  image.alt = "Custom Image";
-  image.classList.add("custom-image"); // Add a class for styling
+  // Create the HTML structure using template literals
+  const NavbarHtml = `
+    <div class="block-with-background" style="background-image: url('${Navbar.navBackgroundImage}');">
+	    <div class="nav-bar-heading">${Navbar.heading}</div>
+	    <div class="description">${Navbar.description}</div>
+	    <img src="${Navbar.navImage}" alt="${Navbar.altText}" class="custom-image"/>
+       <a href="${Navbar.href}" class="custom-link">Click Here</a>
+    </div>
+  `;
 
-  // Create and append a link
-  const link = document.createElement("a");
-  link.href = "https://www.google.com"; // Replace with your desired URL
-  link.textContent = "Click Here";
-  link.classList.add("custom-link"); // Add a class for styling
+  // Set the generated HTML to the block
+  block.innerHTML = NavbarHtml;
 
-  // Set background image for the block
-  block.classList.add("block-with-background");
+  // Add necessary classes
+  // const headingElement = block.querySelector(".nav-bar-heading");
+  // const linkElement = block.querySelector(".custom-link");
 
-  block.appendChild(image); // Append the image before the link
-  block.appendChild(link);
+  // if (headingElement) headingElement.classList.add("nav-bar-heading");
+  // if (linkElement) linkElement.classList.add("custom-link");
 }

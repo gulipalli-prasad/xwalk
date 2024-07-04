@@ -1,43 +1,52 @@
-.nav-bar-wrapper {
+/* General block styling */
+.block-with-background {
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 8px;
+  color: white; /* Assuming a dark background */
+  position: relative;
+}
+
+/* Heading styling */
+.nav-bar-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: chartreuse;
+}
+
+/* Description styling */
+.description {
+  font-size: 16px;
+  margin-bottom: 20px;
   color: orange;
 }
 
+/* Image styling */
 .custom-image {
-  display: block;
+  width: 100%;
   height: auto;
-  margin-bottom: 20px; /* Add space between image and link */
-  margin-left: auto;
-  margin-right: auto;
-  height: 300px;
-  width: 450px;
-  border-radius: 20px;
+  max-width: 300px; /* Adjust as needed */
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 8px;
 }
 
+/* Link styling */
 .custom-link {
   display: inline-block;
   padding: 10px 20px;
-  background-color: white;
+  background-color: #007bff; /* Primary color */
+  color: red;
   text-decoration: none;
-  border-radius: 5px;
-  margin-top: 20px;
-  transition: background-color 0.3s ease; /* Add transition for smoother hover effect */
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
 .custom-link:hover {
-  background-color: rgba(0, 0, 0, 0.7); /* Ensure hover color change */
+  background-color: red; /* Darker shade for hover effect */
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
 }
-
-/*
-.block-with-background {
-  background-image: url("/content/dam/p-xwalk-site/hero.png"); /* Replace with your image path /
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center; /* Ensures the link is centered horizontally /
-  height: 670px;
-  width: 100%;
-}
-
-*/
