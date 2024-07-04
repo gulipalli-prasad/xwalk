@@ -1,5 +1,5 @@
 export default function decorate(block) {
-  function getCustomCard() {
+  function getNavbar() {
     const [headingEl, subHeadingEl, descriptionEl] = block.children;
 
     const heading = headingEl?.textContent?.trim();
