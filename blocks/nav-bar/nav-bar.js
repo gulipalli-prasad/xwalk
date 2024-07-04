@@ -49,11 +49,4 @@ export default function decorate(block) {
 
   // Set the generated HTML to the block
   block.innerHTML = NavbarHtml;
-
-  // Add necessary classes
-  // const headingElement = block.querySelector(".nav-bar-heading");
-  // const linkElement = block.querySelector(".custom-link");
-
-  // if (headingElement) headingElement.classList.add("nav-bar-heading");
-  // if (linkElement) linkElement.classList.add("custom-link");
 }
