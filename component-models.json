@@ -239,7 +239,7 @@
         "valueType": "string",
         "name": "imageSource",
         "label": "Image Source",
-        "multi": false
+        "multi": true
       },
       {
         "component": "text-area",
