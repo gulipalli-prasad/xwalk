@@ -301,7 +301,14 @@
         "valueType": "string",
         "name": "href",
         "value": "",
-        "label": "Link"
+        "label": "cta href"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaLink",
+        "value": "",
+        "label": "cta link"
       }
     ]
   }

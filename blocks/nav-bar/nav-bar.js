@@ -7,6 +7,7 @@ export default function decorate(block) {
       altTextEl,
       navBackgroundImageEl,
       hrefEl,
+      ctaLinkEl,
     ] = block.children;
 
     console.log("my image value is++++", navImageEl);
@@ -24,6 +25,7 @@ export default function decorate(block) {
       navBgImgElement?.getAttribute("src")?.trim() || "";
 
     const href = hrefEl?.textContent?.trim() || "";
+    const ctaLink = ctaLinkEl?.textContent?.trim() || "";
 
     return {
       heading,
@@ -32,6 +34,7 @@ export default function decorate(block) {
       altText,
       navBackgroundImage,
       href,
+      ctaLink,
     };
   }
 
@@ -43,7 +46,7 @@ export default function decorate(block) {
 	    <div class="nav-bar-heading">${Navbar.heading}</div>
 	    <div class="description">${Navbar.description}</div>
 	    <img src="${Navbar.navImage}" alt="${Navbar.altText}" class="custom-image"/>
-       <a href="${Navbar.href}" class="custom-link">Click Here</a>
+       <a href="${Navbar.href}" class="custom-link">${Navbar.ctaLink}</a>
     </div>
   `;
 
