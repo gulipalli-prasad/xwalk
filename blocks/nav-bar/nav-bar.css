@@ -27,14 +27,17 @@
   background-color: rgba(0, 0, 0, 0.7); /* Ensure hover color change */
 }
 
+/*
 .block-with-background {
-  background-image: url("/content/dam/p-xwalk-site/hero.png"); /* Replace with your image path */
+  background-image: url("/content/dam/p-xwalk-site/hero.png"); /* Replace with your image path /
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center; /* Ensures the link is centered horizontally */
+  text-align: center; /* Ensures the link is centered horizontally /
   height: 670px;
   width: 100%;
 }
+
+*/
