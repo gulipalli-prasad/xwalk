@@ -1,17 +1,33 @@
 export default function decorate(block) {
   function getNavbar() {
-    const [headingEl, subHeadingEl, descriptionEl] = block.children;
+    const [
+      headingEl,
+      descriptionEl,
+      navImageEl,
+      altTextEl,
+      navBackgroundImageEl,
+      hrefEl,
+    ] = block.children;
 
-    const heading = headingEl?.textContent?.trim();
-    const subHeading = subHeadingEl?.textContent?.trim();
-    const description = descriptionEl?.textContent?.trim();
+    const heading = headingEl?.textContent?.trim() || "";
+    const description = descriptionEl?.textContent?.trim() || "";
+    const navImage = navImageEl?.getAttribute("src")?.trim() || "";
+    const altText = altTextEl?.textContent?.trim() || "";
+    const navBackgroundImage =
+      navBackgroundImageEl?.getAttribute("src")?.trim() || "";
+    const href = hrefEl?.textContent?.trim() || "";
 
     return {
       heading,
-      subHeading,
       description,
+      navImage,
+      altText,
+      navBackgroundImage,
+      href,
     };
   }
+
+  const customCard = getNavbar(block);
 
   // Create and append an image
   const image = document.createElement("img");

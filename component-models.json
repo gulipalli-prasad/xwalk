@@ -269,13 +269,6 @@
         "label": "Heading"
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "subHeading",
-        "value": "",
-        "label": "Sub Heading"
-      },
-      {
         "component": "text-area",
         "valueType": "string",
         "name": "description",
@@ -286,8 +279,15 @@
         "component": "reference",
         "valueType": "string",
         "name": "navImage",
-        "label": "Image",
+        "label": "Nav Image",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "altText",
+        "value": "",
+        "label": "Alt Text"
       },
       {
         "component": "reference",
