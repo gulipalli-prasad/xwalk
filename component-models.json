@@ -281,6 +281,27 @@
         "name": "description",
         "value": "",
         "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "navImage",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "navBackgroundImage",
+        "label": "Background-Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "href",
+        "value": "",
+        "label": "Link"
       }
     ]
   }
