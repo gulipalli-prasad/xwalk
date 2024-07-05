@@ -46,7 +46,9 @@ export default function decorate(block) {
 	    <div class="nav-bar-heading">${Navbar.heading}</div>
 	    <div class="description">${Navbar.description}</div>
 	    <img src="${Navbar.navImage}" alt="${Navbar.altText}" class="custom-image"/>
-       <a href="${Navbar.href}" class="custom-link">${Navbar.ctaLink}</a>
+       <a href= "ww.google.com" class="custom-link">${Navbar.ctaLink}</a>
+
+       
     </div>
   `;
 

@@ -297,18 +297,18 @@
         "multi": false
       },
       {
-        "component": "text-area",
-        "valueType": "string",
-        "name": "href",
-        "value": "",
-        "label": "cta href"
-      },
-      {
-        "component": "text",
+        "component": "aem-content",
         "valueType": "string",
         "name": "ctaLink",
         "value": "",
-        "label": "cta link"
+        "label": "cta Link"
+      },
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "ctaText",
+        "value": "",
+        "label": "cta text"
       }
     ]
   }
