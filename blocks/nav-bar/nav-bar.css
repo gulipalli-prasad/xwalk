@@ -36,9 +36,9 @@
 /* Link styling */
 .custom-link {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff; /* Primary color */
-  color: white;
+  padding: 10px 10px; /* Reduced padding for a smaller button */
+  background-color: white; /* Changed to white */
+  color: black; /* Changed text color to black */
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.3s;
