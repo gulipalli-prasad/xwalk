@@ -297,7 +297,7 @@
         "multi": false
       },
       {
-        "component": "aem-content",
+        "component": "content-test",
         "valueType": "string",
         "name": "ctaLink",
         "value": "",

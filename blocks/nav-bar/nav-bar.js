@@ -30,8 +30,6 @@ export default function decorate(block) {
     const cta = ctaLinkEl
       ? {
           href: ctaLinkEl.querySelector("a")?.href || "#",
-          title: ctaLinkEl.querySelector("a")?.title || "",
-
           textContent: ctaTextEl?.textContent?.trim() || "",
         }
       : null;
@@ -57,9 +55,7 @@ export default function decorate(block) {
 	    <div class="description">${navBar.description}</div>
 	    <img src="${navBar.navImage}" alt="${navBar.altText}" class="custom-image"/>
       
-        <a href="${navBar.cta?.href || "#"}" title="${
-    navBar.cta?.title || ""
-  }" class="custom-link">
+        <a href="${navBar.cta?.href || "#"}" class="custom-link">
           <p>${navBar.cta?.textContent}</p>
         </a>
     </div>
