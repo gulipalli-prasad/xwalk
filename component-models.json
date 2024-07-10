@@ -346,16 +346,16 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "title",
+        "name": "yes",
         "value": "",
-        "label": "Title"
+        "label": "Yes"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "title",
+        "name": "no",
         "value": "",
-        "label": "Title"
+        "label": "No"
       }
     ]
   }
