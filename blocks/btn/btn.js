@@ -1,43 +1,55 @@
-// Function to show the popup
-function showPopup() {
-  document.getElementById("logoutPopup").style.display = "block";
-}
+export default function decorate(block) {
+  function createLogoutButton() {
+    const logoutButton = document.createElement("button");
+    logoutButton.id = "logoutButton";
+    logoutButton.className = "blue-button";
+    logoutButton.textContent = "LOGOUT";
+    return logoutButton;
+  }
 
-// Function to hide the popup
-function hidePopup() {
-  document.getElementById("logoutPopup").style.display = "none";
-}
-
-// Function to confirm logout and redirect
-function confirmLogout() {
-  window.location.href = "http://google.com"; // Replace with your logout URL
-}
-
-// Create and append the logout button
-const button = document.createElement("button");
-button.className = "logout-button";
-button.textContent = "LOGOUT";
-button.onclick = showPopup;
-document.body.appendChild(button);
-
-// Create and append the popup HTML
-const popupHtml = `
-  <div id="logoutPopup" class="popup">
-      <div class="popup-header">
-          <h2><i class="icon">ℹ️</i> Information</h2>
-          <span class="close" onclick="hidePopup()">&times;</span>
+  function createModal() {
+    const modal = document.createElement("div");
+    modal.id = "logoutModal";
+    modal.innerHTML = `
+      <div class="modal-content">
+        <h2>Information</h2>
+        <p>Are you sure, you want to logout?</p>
+        <button id="yesButton" class="blue-button">YES</button>
+        <button id="noButton" class="blue-button">NO</button>
       </div>
-      <p>Are you sure you want to logout?</p>
-      <div class="popup-buttons">
-          <button onclick="confirmLogout()">YES</button>
-          <button onclick="hidePopup()">NO</button>
-      </div>
-  </div>
-`;
-document.body.insertAdjacentHTML("beforeend", popupHtml);
+    `;
+    return modal;
+  }
 
-// Include the CSS file dynamically
-const link = document.createElement("link");
-link.rel = "stylesheet";
-link.href = "path/to/eds-styles.css"; // Update the path to your actual CSS file
-document.head.appendChild(link);
+  function setupEventListeners(logoutButton, modal) {
+    logoutButton.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
+
+    const yesButton = modal.querySelector("#yesButton");
+    const noButton = modal.querySelector("#noButton");
+    yesButton.addEventListener("click", () => {
+      // Redirect to another page (replace with your desired URL)
+
+      window.location.href = "https://google.com";
+    });
+
+    noButton.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
+
+  const logoutButton = createLogoutButton();
+  const modal = createModal();
+  block.innerHTML = "";
+  block.appendChild(logoutButton);
+  block.appendChild(modal);
+
+  setupEventListeners(logoutButton, modal);
+}
