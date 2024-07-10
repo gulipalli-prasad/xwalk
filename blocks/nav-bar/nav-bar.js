@@ -10,9 +10,6 @@ export default function decorate(block) {
       ctaTextEl,
     ] = block.children;
 
-    console.log("ctaLinkEl", ctaLinkEl);
-    console.log("my image value is++++", navImageEl);
-
     const heading = headingEl?.textContent?.trim() || "";
     const description = descriptionEl?.textContent?.trim() || "";
 
@@ -64,11 +61,4 @@ export default function decorate(block) {
 
   // Set the generated HTML to the block
   block.innerHTML = navBarHtml;
-
-  // Add necessary classes
-  // const headingElement = block.querySelector(".nav-bar-heading");
-  // const linkElement = block.querySelector(".custom-link");
-
-  // if (headingElement) headingElement.classList.add("nav-bar-heading");
-  // if (linkElement) linkElement.classList.add("custom-link");
 }
