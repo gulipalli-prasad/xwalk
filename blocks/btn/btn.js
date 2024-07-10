@@ -1,27 +1,51 @@
-// Function to show the popup
-function showPopup() {
-  document.getElementById("logoutPopup").style.display = "block";
-}
+export default function decorate(block) {
+  function btnFun() {
+    const [logoutTextEl, popupHeadingEl, popupDescEl, hrefEl, yesEl, noEl] =
+      block.children;
 
-// Function to hide the popup
-function hidePopup() {
-  document.getElementById("logoutPopup").style.display = "none";
-}
+    const logoutText = logoutTextEl?.textContent?.trim() || "";
+    const popupHeading = popupHeadingEl?.textContent?.trim() || "";
+    const popupDesc = popupDescEl?.textContent?.trim() || "";
+    const href = hrefEl?.textContent?.trim() || "";
+    const yes = yesEl?.textContent?.trim() || "";
+    const no = noEl?.textContent?.trim() || "";
 
-// Function to confirm logout and redirect
-function confirmLogout() {
-  window.location.href = "http://example.com/logout"; // Replace with your logout URL
-}
+    return {
+      logoutText,
+      popupHeading,
+      popupDesc,
+      href,
+      yes,
+      no,
+    };
+  }
 
-// Create and append the logout button
-const button = document.createElement("button");
-button.className = "logout-button";
-button.textContent = "LOGOUT";
-button.onclick = showPopup;
-document.body.appendChild(button);
+  const btnFunction = btnFun(block);
 
-// Create and append the popup HTML
-const popupHtml = `
+  // Function to show the popup
+  function showPopup() {
+    document.getElementById("logoutPopup").style.display = "block";
+  }
+
+  // Function to hide the popup
+  function hidePopup() {
+    document.getElementById("logoutPopup").style.display = "none";
+  }
+
+  // Function to confirm logout and redirect
+  function confirmLogout() {
+    window.location.href = "http://google.com"; // Replace with your logout URL
+  }
+
+  // Create and append the logout button
+  const button = document.createElement("button");
+  button.className = "logout-button";
+  button.textContent = "LOGOUT";
+  button.onclick = showPopup;
+  block.appendChild(button);
+
+  // Create and append the popup HTML
+  const popupHtml = `
   <div id="logoutPopup" class="popup">
       <div class="popup-header">
           <h2><i class="icon">ℹ️</i> Information</h2>
@@ -34,10 +58,11 @@ const popupHtml = `
       </div>
   </div>
 `;
-document.body.insertAdjacentHTML("beforeend", popupHtml);
+  document.body.insertAdjacentHTML("beforeend", popupHtml);
 
-// Include the CSS file dynamically
-const link = document.createElement("link");
-link.rel = "stylesheet";
-link.href = "path/to/eds-styles.css"; // Update the path to your actual CSS file
-document.head.appendChild(link);
+  // Include the CSS file dynamically
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "path/to/eds-styles.css"; // Update the path to your actual CSS file
+  document.head.appendChild(link);
+}
