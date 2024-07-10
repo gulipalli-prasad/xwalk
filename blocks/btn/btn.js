@@ -1,12 +1,12 @@
 export default function decorate(block) {
-  function btnFun() {
+  function getPopupData() {
     const [logoutTextEl, popupHeadingEl, popupDescEl, hrefEl, yesEl, noEl] =
       block.children;
 
     const logoutText = logoutTextEl?.textContent?.trim() || "";
     const popupHeading = popupHeadingEl?.textContent?.trim() || "";
     const popupDesc = popupDescEl?.textContent?.trim() || "";
-    const href = hrefEl?.textContent?.trim() || "";
+    const href = hrefEl?.querySelector("a")?.href || "";
     const yes = yesEl?.textContent?.trim() || "";
     const no = noEl?.textContent?.trim() || "";
 
@@ -20,7 +20,7 @@ export default function decorate(block) {
     };
   }
 
-  const btnFunction = btnFun(block);
+  const popupData = getPopupData();
 
   // Function to show the popup
   function showPopup() {
@@ -34,30 +34,30 @@ export default function decorate(block) {
 
   // Function to confirm logout and redirect
   function confirmLogout() {
-    window.location.href = "http://google.com"; // Replace with your logout URL
+    window.location.href = popupData.href; // Use the dynamic logout URL
   }
 
   // Create and append the logout button
   const button = document.createElement("button");
   button.className = "logout-button";
-  button.textContent = "LOGOUT";
+  button.textContent = popupData.logoutText || "LOGOUT"; // Use the dynamic logout text
   button.onclick = showPopup;
   block.appendChild(button);
 
   // Create and append the popup HTML
   const popupHtml = `
-  <div id="logoutPopup" class="popup">
-      <div class="popup-header">
-          <h2><i class="icon">ℹ️</i> Information</h2>
-          <span class="close" onclick="hidePopup()">&times;</span>
-      </div>
-      <p>Are you sure you want to logout?</p>
-      <div class="popup-buttons">
-          <button onclick="confirmLogout()">YES</button>
-          <button onclick="hidePopup()">NO</button>
-      </div>
-  </div>
-`;
+    <div id="logoutPopup" class="popup">
+        <div class="popup-header">
+            <h2><i class="icon">ℹ️</i> ${popupData.popupHeading}</h2>
+            <span class="close" onclick="hidePopup()">&times;</span>
+        </div>
+        <p>${popupData.popupDesc}</p>
+        <div class="popup-buttons">
+            <button onclick="confirmLogout()">${popupData.yes}</button>
+            <button onclick="hidePopup()">${popupData.no}</button>
+        </div>
+    </div>
+  `;
   document.body.insertAdjacentHTML("beforeend", popupHtml);
 
   // Include the CSS file dynamically
