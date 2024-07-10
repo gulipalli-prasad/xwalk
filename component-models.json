@@ -311,5 +311,52 @@
         "label": "cta text"
       }
     ]
+  },
+  {
+    "id": "btn",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "logoutText",
+        "value": "",
+        "label": "Logout Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "popupHeading",
+        "value": "",
+        "label": "popup Heading"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "popupDesc",
+        "value": "",
+        "label": "popup Desc"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "href",
+        "value": "",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Title"
+      }
+    ]
   }
 ]
