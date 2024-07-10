@@ -1,64 +1,75 @@
 export default function decorate(block) {
-  function getNavbar() {
-    const [
-      headingEl,
-      descriptionEl,
-      navImageEl,
-      altTextEl,
-      navBackgroundImageEl,
-      ctaLinkEl,
-      ctaTextEl,
-    ] = block.children;
+  function createLogoutButton() {
+    const logoutButton = document.createElement("button");
 
-    const heading = headingEl?.textContent?.trim() || "";
-    const description = descriptionEl?.textContent?.trim() || "";
+    logoutButton.id = "logoutButton";
 
-    const navImgElement = navImageEl.querySelector("img");
-    const navImage = navImgElement?.getAttribute("src")?.trim() || "";
+    logoutButton.className = "blue-button";
 
-    const altText = altTextEl?.textContent?.trim() || "";
+    logoutButton.textContent = "LOGOUT";
 
-    const navBgImgElement = navBackgroundImageEl.querySelector("img");
-    const navBackgroundImage =
-      navBgImgElement?.getAttribute("src")?.trim() || "";
-
-    //  const ctaLink = ctaLinkEl?.textContent?.trim() || "";
-    //  const ctaText = ctaTextEl?.textContent?.trim() || "";
-
-    const cta = ctaLinkEl
-      ? {
-          href: ctaLinkEl.querySelector("a")?.href || "#",
-          textContent: ctaTextEl?.textContent?.trim() || "",
-        }
-      : null;
-
-    return {
-      heading,
-      description,
-      navImage,
-      altText,
-      navBackgroundImage,
-      cta,
-    };
+    return logoutButton;
   }
 
-  const navBar = getNavbar(block);
+  function createModal() {
+    const modal = document.createElement("div");
 
-  // Create the HTML structure using template literals
-  const navBarHtml = `
-    <div class="block-with-background" style="background-image: url('${
-      navBar.navBackgroundImage
-    }');">
-	    <div class="nav-bar-heading">${navBar.heading}</div>
-	    <div class="description">${navBar.description}</div>
-	    <img src="${navBar.navImage}" alt="${navBar.altText}" class="custom-image"/>
-      
-        <a href="${navBar.cta?.href || "#"}" class="custom-link">
-          <p>${navBar.cta?.textContent}</p>
-        </a>
-    </div>
-  `;
+    modal.id = "logoutModal";
 
-  // Set the generated HTML to the block
-  block.innerHTML = navBarHtml;
+    modal.innerHTML = `
+
+      <div class="modal-content">
+
+        <h2>Information</h2>
+
+        <p>Are you sure, you want to logout?</p>
+
+        <button id="yesButton" class="blue-button">YES</button>
+
+        <button id="noButton" class="blue-button">NO</button>
+
+      </div>
+
+    `;
+
+    return modal;
+  }
+
+  function setupEventListeners(logoutButton, modal) {
+    logoutButton.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
+
+    const yesButton = modal.querySelector("#yesButton");
+
+    const noButton = modal.querySelector("#noButton");
+
+    yesButton.addEventListener("click", () => {
+      // Redirect to another page (replace with your desired URL)
+
+      window.location.href = "https://google.com";
+    });
+
+    noButton.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
+
+  const logoutButton = createLogoutButton();
+
+  const modal = createModal();
+
+  block.innerHTML = "";
+
+  block.appendChild(logoutButton);
+
+  block.appendChild(modal);
+
+  setupEventListeners(logoutButton, modal);
 }
