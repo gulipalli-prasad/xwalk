@@ -227,6 +227,21 @@
               }
             }
           }
+        },
+        {
+          "title": "User Details",
+          "id": "userdetails",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "User Details",
+                  "model": "userdetails"
+                }
+              }
+            }
+          }
         }
       ]
     }
