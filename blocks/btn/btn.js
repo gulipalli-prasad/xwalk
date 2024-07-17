@@ -1,6 +1,5 @@
 export default function decorate(block) {
   // Extract text content from the block's children
-
   const [logoutTextEl, popupHeadingEl, popupDescEl, linkEl, yesEl, noEl] =
     block.children;
 
@@ -33,6 +32,37 @@ export default function decorate(block) {
     return modal;
   }
 
+  // async function callLogoutAPI() {
+  //   try {
+  //     const response = await fetch(
+  //       "https://jsonplaceholder.typicode.com/posts",
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify({ action: "logout" }),
+  //       }
+  //     );
+
+  //     if (response.ok) {
+  //       alert("Logout successful");
+  //       // Redirect to the login page or perform another action
+  //       window.location.href = link; // Change the URL to your login page
+  //     } else {
+  //       alert("Logout failed. Please try again.");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error logging out:", error);
+  //     alert("Error logging out. Please try again.");
+  //   }
+  // }
+
+  // function clearLocalStorage() {
+  //   localStorage.removeItem("name");
+  //   // Add more keys to remove if needed
+  // }
+
   function setupEventListeners(logoutButton, modal) {
     logoutButton.addEventListener("click", () => {
       modal.style.display = "block";
@@ -42,6 +72,9 @@ export default function decorate(block) {
     const noButton = modal.querySelector("#noButton");
 
     yesButton.addEventListener("click", () => {
+      modal.style.display = "none";
+      // clearLocalStorage(); // Clear local storage
+      // callLogoutAPI(); // Call the API to log out
       window.location.href = link;
     });
 
