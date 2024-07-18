@@ -26,14 +26,12 @@ export default function decorate(block) {
                 <div class="user-img">
                     <img src="${logo}" alt="user image">
                 </div>
-
                 <div class="user-details">
                     <div class="user_bx">
                         <h4 class="user_name" id="user_name">LALIT TUKARAM ZIRMIRE</h4>
                         <p class="user_designation" id="user_designation">Relationship Manager</p>
                         <p class="user_addr" id="user_addr">411037, PUNE MAHARASHTRA</p>
                     </div>
-
                     <div class="user_logout">
                         <a href="javascript: void(0)" id="logoutButton">Logout</a>
                     </div>
