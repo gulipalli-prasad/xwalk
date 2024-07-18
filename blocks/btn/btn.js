@@ -24,7 +24,7 @@ export default function decorate(block) {
         <div class="grey-bg">
             <div class="user-information-box">
                 <div class="user-img">
-                    <img src="images/user-img.webp" alt="user image">
+                    <img src="${logo}" alt="user image">
                 </div>
 
                 <div class="user-details">
