@@ -363,11 +363,32 @@
     "id": "userdetails",
     "fields": [
       {
+        "component": "reference",
+        "valueType": "string",
+        "name": "userImage",
+        "label": "User Image",
+        "multi": false
+      },
+      {
         "component": "text",
         "valueType": "string",
-        "name": "user",
+        "name": "userName",
         "value": "",
-        "label": "user"
+        "label": "User Name"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "userRole",
+        "value": "",
+        "label": "User Role"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "userAddress",
+        "value": "",
+        "label": "User Address"
       }
     ]
   }
