@@ -1,35 +1,37 @@
 export default async function decorate(block) {
-  function getUserDetails() {
-    const [userImageEl, userNameEl, userRoleEl, userAddressEl] = block.children;
+  const apiEndpoint = "https://jsonplaceholder.typicode.com/users/1"; // Sample API endpoint
 
-    const userImgElement = userImageEl.querySelector("img");
-    const userImage = userImgElement?.getAttribute("src")?.trim() || "";
-    const userName = userNameEl?.textContent?.trim() || "";
-    const userRole = userRoleEl?.textContent?.trim() || "";
-    const userAddress = userAddressEl?.textContent?.trim() || "";
+  try {
+    const response = await fetch(apiEndpoint);
+    const data = await response.json();
 
-    return {
-      userImage,
-      userName,
-      userRole,
-      userAddress,
-    };
+    const profileCard = document.createElement("div");
+    profileCard.className = "profile-card";
+
+    const profileImage = document.createElement("div");
+    profileImage.className = "profile-image";
+    const img = document.createElement("img");
+    img.src = "https://via.placeholder.com/100"; // Placeholder image URL
+    img.alt = "Profile Image";
+    profileImage.appendChild(img);
+
+    const profileInfo = document.createElement("div");
+    profileInfo.className = "profile-info";
+    const name = document.createElement("h2");
+    name.textContent = data.name;
+    const role = document.createElement("p");
+    role.textContent = "Role: Sample Role"; // You can replace this with actual data if available
+    const location = document.createElement("p");
+    location.textContent = data.address.city + ", " + data.address.zipcode;
+    profileInfo.appendChild(name);
+    profileInfo.appendChild(role);
+    profileInfo.appendChild(location);
+
+    profileCard.appendChild(profileImage);
+    profileCard.appendChild(profileInfo);
+
+    block.appendChild(profileCard);
+  } catch (error) {
+    console.error("Error fetching profile card data:", error);
   }
-
-  const userdetails = getUserDetails(block);
-
-  const userdetailsHtml = `
-    <div class="profile-card">
-        <div class="profile-image">
-            <img src="${userdetails.userImage}" alt="Profile Image">
-        </div>
-        <div class="profile-info">
-            <h2>${userdetails.userName}</h2>
-            <p>${userdetails.userRole}</p>
-            <p>${userdetails.userAddress}</p>
-        </div>
-    </div>
-`;
-
-  block.innerHTML = userdetailsHtml;
 }

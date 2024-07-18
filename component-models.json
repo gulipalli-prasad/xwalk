@@ -365,30 +365,9 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "userImage",
-        "label": "User Image",
+        "name": "genderImage",
+        "label": "Gender Image",
         "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "userName",
-        "value": "",
-        "label": "User Name"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "userRole",
-        "value": "",
-        "label": "User Role"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "userAddress",
-        "value": "",
-        "label": "User Address"
       }
     ]
   }
