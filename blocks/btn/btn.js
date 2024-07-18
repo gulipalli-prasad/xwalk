@@ -16,7 +16,8 @@ export default function decorate(block) {
   const link = linkEl?.querySelector("a")?.href || "#";
   const yesText = yesEl?.textContent?.trim() || "";
   const noText = noEl?.textContent?.trim() || "";
-  const logo = logoEl?.textContent?.trim() || "";
+  const logoElement = logoEl.querySelector("img");
+  const logo = logoElement?.getAttribute("src")?.trim() || "";
 
   function createLogoutButton() {
     const logoutButton = document.createElement("button");
