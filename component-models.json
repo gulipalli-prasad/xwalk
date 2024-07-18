@@ -356,6 +356,13 @@
         "name": "no",
         "value": "",
         "label": "No"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "logo",
+        "value": "",
+        "label": "logo"
       }
     ]
   },
