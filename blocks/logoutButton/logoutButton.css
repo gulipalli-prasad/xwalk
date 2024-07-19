@@ -208,3 +208,36 @@ p {
 .blackButton {
   display: inline-block;
 }
+.popUpmain .modal-content .close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding-top: 17px;
+}
+
+@media (min-width: 999px) {
+  .grey-bg .user-information-box .user-details {
+    flex-direction: row;
+  }
+}
+.grey-bg .user-information-box .user-img img {
+  width: 77px;
+  height: 77px;
+  background: #eeee;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.modal-content {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
