@@ -6,7 +6,9 @@ export default function decorate(block) {
     linkEl,
     yesEl,
     noEl,
-    logoEl,
+    userImageEl,
+    crossFormEl,
+    infoIconEl,
   ] = block.children;
 
   const logoutText = logoutTextEl?.textContent?.trim() || "";
@@ -15,28 +17,33 @@ export default function decorate(block) {
   const link = linkEl?.querySelector("a")?.href || "#";
   const yesText = yesEl?.textContent?.trim() || "";
   const noText = noEl?.textContent?.trim() || "";
-  const logoElement = logoEl.querySelector("img");
-  const logo = logoElement?.getAttribute("src")?.trim() || "";
+  const userImageElement = userImageEl.querySelector("img");
+  const userImage = userImageElement?.getAttribute("src")?.trim() || "";
+  const crossFormElement = crossFormEl.querySelector("img");
+  const crossForm = crossFormElement?.getAttribute("src")?.trim() || "";
+  const infoIconElement = infoIconEl.querySelector("img");
+  const infoIcon = infoIconElement?.getAttribute("src")?.trim() || "";
 
   function createProfileCard(data) {
     return `
-    <div class="container ">
-        <div class="grey-bg">
-            <div class="user-information-box">
-                <div class="user-img">
-                    <img src="${logo}" alt="user image">
-                </div>
-                <div class="user-details">
-                    <div class="user_bx">
-                        <h4 class="user_name" id="user_name">LALIT TUKARAM ZIRMIRE</h4>
-                        <p class="user_designation" id="user_designation">Relationship Manager</p>
-                        <p class="user_addr" id="user_addr">411037, PUNE MAHARASHTRA</p>
-                    </div>
-                    <div class="user_logout">
-                        <a href="javascript: void(0)" id="logoutButton">Logout</a>
-                    </div>
-                </div>
-            </div>
+      <div class="container ">
+          <div class="grey-bg">
+              <div class="user-information-box">
+                  <div class="user-img">
+                      <img src="${userImage}" alt="user image">
+                  </div>
+                  <div class="user-details">
+                      <div class="user_bx">
+                          <h4 class="user_name" id="user_name">${data.name}</h4>
+                          <p class="user_designation" id="user_designation">Relationship Manager</p>
+                          <p class="user_addr" id="user_addr">411037, PUNE MAHARASHTRA</p>
+                      </div>
+                      <div class="user_logout">
+                          <a href="javascript:void(0)" id="logoutButton">${logoutText}</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
     `;
   }
@@ -46,15 +53,15 @@ export default function decorate(block) {
       <div class="popUpmain" id="popup" style="display:none;">
         <div class="modal-content">
           <div class="close" id="close-popup">
-            <img src="images/cross-form.webp" alt="cross form">
+            <img src="${crossForm}" alt="cross form">
           </div>
           <div class="popupContent blue">
-            <h2><img src="images/info-icon.webp" alt="info icon"> ${popupHeading}</h2>
+            <h2><img src="${infoIcon}" alt="info icon"> ${popupHeading}</h2>
             <p>${popupDesc}</p>
             <div class="blackButton">
               <button type="button" class="logout_yes" id="yesButton">${yesText}</button>
             </div>
-            <div class="blackButton">  
+            <div class="blackButton">
               <button type="button" class="logout_no" id="noButton">${noText}</button>
             </div>
           </div>
@@ -105,8 +112,6 @@ export default function decorate(block) {
       modal.style.display = "none";
     });
   }
-
-  // Fetch user data and create the profile card
 
   fetchUserData().then((userData) => {
     if (userData) {
