@@ -360,9 +360,23 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "logo",
+        "name": "userImage",
         "value": "",
-        "label": "logo"
+        "label": "User Image"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "crossForm",
+        "value": "",
+        "label": "Cross Form"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "infoIcon",
+        "value": "",
+        "label": "Info Icon"
       }
     ]
   },
