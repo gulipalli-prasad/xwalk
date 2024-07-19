@@ -313,7 +313,7 @@
     ]
   },
   {
-    "id": "logoutButton",
+    "id": "btn",
     "fields": [
       {
         "component": "text",
